@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>TechNova | The Digital Curator</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#690005",
+                        "surface-container-high": "#282a2c",
+                        "secondary-fixed": "#ffdcc3",
+                        "surface-dim": "#121416",
+                        "surface-tint": "#adc7ff",
+                        "tertiary-container": "#929090",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "inverse-on-surface": "#2f3133",
+                        "primary-fixed": "#d8e2ff",
+                        "on-primary-fixed-variant": "#004493",
+                        "secondary-container": "#fd8b00",
+                        "surface-container": "#1e2022",
+                        "on-error-container": "#ffdad6",
+                        "primary": "#adc7ff",
+                        "on-tertiary-container": "#2a2a29",
+                        "on-primary-container": "#00285b",
+                        "on-secondary-fixed": "#2f1500",
+                        "outline": "#8b90a0",
+                        "tertiary": "#c8c6c5",
+                        "on-primary-fixed": "#001a41",
+                        "on-secondary-fixed-variant": "#6e3900",
+                        "secondary": "#ffb77d",
+                        "on-secondary-container": "#603100",
+                        "surface-variant": "#333537",
+                        "surface": "#121416",
+                        "on-tertiary-fixed-variant": "#474646",
+                        "primary-container": "#4a8eff",
+                        "on-secondary": "#4d2600",
+                        "surface-container-highest": "#333537",
+                        "tertiary-fixed": "#e5e2e1",
+                        "surface-container-lowest": "#0c0e10",
+                        "inverse-primary": "#005bc0",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-background": "#e2e2e5",
+                        "on-primary": "#002e68",
+                        "on-surface-variant": "#c1c6d7",
+                        "outline-variant": "#414754",
+                        "surface-bright": "#37393b",
+                        "inverse-surface": "#e2e2e5",
+                        "surface-container-low": "#1a1c1e",
+                        "secondary-fixed-dim": "#ffb77d",
+                        "on-surface": "#e2e2e5",
+                        "on-tertiary": "#313030",
+                        "error": "#ffb4ab",
+                        "primary-fixed-dim": "#adc7ff",
+                        "background": "#121416"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+
+<body
+    class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
+    <!-- TopAppBar -->
+    <header
+        class="fixed top-0 w-full z-50 bg-[#121416]/80 backdrop-blur-xl shadow-[0_20px_40px_-10px_rgba(226,226,229,0.06)]">
+        <div class="flex flex-col w-full px-6 py-4 max-w-none">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                    <button
+                        class="material-symbols-outlined text-[#adc7ff] hover:bg-[#333537] transition-colors duration-300 p-2 rounded-lg">menu</button>
+                    <span
+                        class="text-2xl font-bold text-[#e2e2e5] tracking-tighter font-['Space_Grotesk']">TechNova</span>
+                </div>
+                <!-- Desktop Navigation (Semantic Mapping: Catalog Active) -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a class="text-[#adc7ff] font-bold border-b-2 border-[#adc7ff] font-['Manrope'] py-1"
+                        href="beranda.html">Home</a>
+                    <a class="text-[#e2e2e5]/70 font-['Manrope'] font-medium hover:text-[#adc7ff] transition-colors"
+                        href="katalog.html">Catalog</a>
+                    <a class="text-[#e2e2e5]/70 font-['Manrope'] font-medium hover:text-[#adc7ff] transition-colors"
+                        href="keranjang belanja.html">Cart</a>
+                    <a class="text-[#e2e2e5]/70 font-['Manrope'] font-medium hover:text-[#adc7ff] transition-colors"
+                        href="account.html">Account</a>
+                </nav>
+                <div class="flex items-center gap-2">
+                    <button
+                        class="material-symbols-outlined text-[#adc7ff] hover:bg-[#333537] transition-colors duration-300 p-2 rounded-lg">shopping_cart</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="pt-24 pb-32">
+        <!-- Hero Section: Flagship Smartphone -->
+        <section class="px-6 mb-20">
+            <div class="relative w-full h-[618px] rounded-3xl overflow-hidden group">
+                <div class="absolute inset-0 bg-gradient-to-r from-[#121416] via-transparent to-transparent z-10"></div>
+                <img alt="Nova Blade X1 Ultra"
+                    class="absolute inset-0 w-full h-full object-cover object-center scale-105 group-hover:scale-100 transition-transform duration-[2000ms]"
+                    data-alt="Modern foldable smartphone displaying a vibrant abstract fluid wallpaper, metallic titanium frame, cinematic lighting in a dark tech environment"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7iyN_7No8r5J20joimdpfQ4dagGy-K94EdY-CIROaW7UsouX1p8JdK_2yurnnU_SeEY850zjq-cCfBWlTfKQ1g2HiBCix5Jf0v-_JacJiARfjkdh9XJqJ9Qlaydoh-PTP8LlbS0oXTKZp5Jsx0BG5dnr4OlAI8gfczKmymw7ptnPTnJ9kQmTetSc83cINBqxSRs_LkuAxHqZxgAf13tK_Zb4sRJPGbOQ4U-1J2qkrNiQoTvLC_5SJxvKhY3nMV5z5oll7dcATZNg" />
+                <div class="relative z-20 h-full flex flex-col justify-center px-12 md:px-24 max-w-4xl">
+                    <span
+                        class="inline-block px-3 py-1 bg-secondary-container/20 text-secondary border border-secondary/30 rounded-full text-xs font-bold tracking-[0.2em] mb-6 uppercase">NEW
+                        RELEASE</span>
+                    <h1
+                        class="font-headline text-5xl md:text-7xl font-bold text-on-surface tracking-tighter leading-none mb-6">
+                        NovaFold <span
+                            class="text-transparent bg-clip-text bg-gradient-to-br from-primary to-primary-container">Z-1</span>
+                    </h1>
+                    <p class="font-body text-on-surface-variant text-lg md:text-xl max-w-lg mb-10 leading-relaxed">
+                        mahakarya teknik yang dirancang untuk performa tanpa kompromi.
+                    <div class="flex flex-wrap gap-4">
+                        <button
+                            class="px-10 py-4 bg-primary-container text-on-primary-container font-bold rounded-lg hover:bg-secondary-container transition-all duration-300 shadow-[0_0_30px_-5px_rgba(74,142,255,0.4)] active:scale-95">
+                            Beli Sekarang
+                        </button>
+                        <a href="detail produk.html"
+                            class="px-10 py-4 border border-outline-variant/30 text-primary font-bold rounded-lg hover:bg-surface-container-high transition-all duration-300 backdrop-blur-md">
+                            Pelajari Lebih Lanjut
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Kategori Populer: Horizontal Flat Icons -->
+        <section class="px-6 mb-24">
+            <div class="flex items-end justify-between mb-8">
+                <div>
+                    <h2 class="font-headline text-xs font-bold text-primary tracking-[0.3em] uppercase mb-2">Kurasi
+                        Pilihan</h2>
+                    <h3 class="font-headline text-3xl font-bold tracking-tight text-on-surface">Kategori Populer</h3>
+                </div>
+                <a class="text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all group"
+                    href="katalog.html">
+                    Semua Kategori
+                    <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">
+                        arrow_forward
+                    </span>
+                </a>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Category Card 1 -->
+                <div
+                    class="group cursor-pointer bg-surface-container-low rounded-2xl p-8 flex flex-col items-center justify-center gap-4 hover:bg-surface-container-high transition-all duration-500 border border-transparent hover:border-outline-variant/20">
+                    <div
+                        class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                        <span class="material-symbols-outlined text-4xl text-primary">smartphone</span>
+                    </div>
+                    <span class="font-headline font-bold text-on-surface tracking-tight">Smartphone</span>
+                </div>
+                <!-- Category Card 2 -->
+                <div
+                    class="group cursor-pointer bg-surface-container-low rounded-2xl p-8 flex flex-col items-center justify-center gap-4 hover:bg-surface-container-high transition-all duration-500 border border-transparent hover:border-outline-variant/20">
+                    <div
+                        class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                        <span class="material-symbols-outlined text-4xl text-primary">laptop</span>
+                    </div>
+                    <span class="font-headline font-bold text-on-surface tracking-tight">Laptop</span>
+                </div>
+                <!-- Category Card 3 -->
+                <div
+                    class="group cursor-pointer bg-surface-container-low rounded-2xl p-8 flex flex-col items-center justify-center gap-4 hover:bg-surface-container-high transition-all duration-500 border border-transparent hover:border-outline-variant/20">
+                    <div
+                        class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                        <span class="material-symbols-outlined text-4xl text-primary">headphones</span>
+                    </div>
+                    <span class="font-headline font-bold text-on-surface tracking-tight">Audio</span>
+                </div>
+                <!-- Category Card 4 -->
+                <div
+                    class="group cursor-pointer bg-surface-container-low rounded-2xl p-8 flex flex-col items-center justify-center gap-4 hover:bg-surface-container-high transition-all duration-500 border border-transparent hover:border-outline-variant/20">
+                    <div
+                        class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                        <span class="material-symbols-outlined text-4xl text-primary">home_iot_device</span>
+                    </div>
+                    <span class="font-headline font-bold text-on-surface tracking-tight">Smart Home</span>
+                </div>
+            </div>
+        </section>
+        <!-- Produk Terlaris: Bento Grid Style -->
+        <section class="px-6 mb-24">
+            <div class="mb-12">
+                <h2 class="font-headline text-xs font-bold text-primary tracking-[0.3em] uppercase mb-2">Trend Saat Ini
+                </h2>
+                <h3 class="font-headline text-3xl font-bold tracking-tight text-on-surface">Produk Terlaris</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                <!-- Featured Item -->
+                <div
+                    class="md:col-span-6 bg-surface-container-low rounded-3xl overflow-hidden group border border-transparent hover:border-outline-variant/10 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] transition-all duration-500">
+                    <div class="aspect-[16/10] overflow-hidden bg-surface-container-highest relative">
+                        <img alt="Audio Pro"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            data-alt="Premium wireless over-ear noise-cancelling headphones in space grey, matte finish, soft professional lighting on a textured surface"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFfUXJZ5mFdP4X5GTRuQ_20pq8Q9BbQYFoXnuATuX-MptnqxezTi6i6UEpujJIjvwhQN6tOrgb-NlZQ3y9Y_sQi1pp7IRLsWGrdrcmJwwKC_lvbZf7FCyvWMag9opBkx8M4NWgJ_nPn3NpW8RX-zTl-b0zZekit9MxwafbPimlRh521BVgmGhq73fRZNCx9mlABL94Tsnkq2_pikxnCC0rC4cfInBmpWNrVk3zTbRSU_ITE2qQOBVIzdNbNz2i0YfB6OAMfHlrtxA" />
+                        <div
+                            class="absolute top-4 right-4 px-3 py-1 bg-secondary text-on-secondary-fixed font-bold text-[10px] tracking-widest uppercase rounded-full">
+                            BEST SELLER</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h4 class="font-headline text-2xl font-bold text-on-surface mb-1">SonicPro Wireless X
+                                </h4>
+                                <p class="text-on-surface-variant font-body">Active Noise Cancellation Ultra</p>
+                            </div>
+                            <span class="font-headline text-xl font-bold text-primary">Rp 4.999.000</span>
+                        </div>
+                        <button
+                            class="w-full py-4 rounded-xl bg-surface-container-highest hover:bg-primary hover:text-on-primary font-bold transition-all duration-300">
+                            Tambah ke Keranjang
+                        </button>
+                    </div>
+                </div>
+                <!-- Small Grid Items -->
+                <div class="md:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <!-- Product 1 -->
+                    <div
+                        class="bg-surface-container-low rounded-3xl p-6 group border border-transparent hover:border-outline-variant/10 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] transition-all duration-500">
+                        <div class="aspect-square bg-surface-container-highest rounded-2xl overflow-hidden mb-6">
+                            <img alt="Tablet"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                data-alt="Sleek modern tablet with stylus, high resolution display showing architectural sketches, minimal studio lighting"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBst2LeOC68CV1_Ysd1q0bX2Nxvivp5I5jyS6F-uhXlrxdRWrpiLOmuV-21YqwMqV29YLDtgDt1A66Nd5p1uwo-FMWTZrqmAkuk1zWzP5E3H788evKJkXXJB7xLcaKZxg2FrNnR1HabZsUNcF7lBrnImsqmqBis4dpL7VNQcmz0JdWscc2lY2m6WlONm4z2gZ0k0dtUqkp_8Av07etY2JIZKFHtuxCiRsTbxhUjUGX4LHC6Rt0Xk5VkVbbDAAWkp_y37eBSAXxye_A" />
+                        </div>
+                        <h4 class="font-headline font-bold text-on-surface text-lg mb-1">NovaTab 12 Pro</h4>
+                        <p class="text-primary font-bold mb-6">Rp 12.499.000</p>
+                        <button
+                            class="w-full py-3 rounded-lg border border-outline-variant/20 hover:bg-primary/10 hover:border-primary transition-all flex items-center justify-center gap-2">
+                            <span class="material-symbols-outlined text-sm">shopping_bag</span>
+                            <span class="text-sm font-bold">Beli</span>
+                        </button>
+                    </div>
+                    <!-- Product 2 -->
+                    <div
+                        class="bg-surface-container-low rounded-3xl p-6 group border border-transparent hover:border-outline-variant/10 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] transition-all duration-500">
+                        <div class="aspect-square bg-surface-container-highest rounded-2xl overflow-hidden mb-6">
+                            <img alt="Watch"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                data-alt="Minimalist white smart watch with rubber strap on a neutral background, top view, soft ambient shadows"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCojnPcqcAqIm1Q92E14juvOEeV5RLDv9og5qCsYgUDfGy6bAmgH5GQ9lHFhftQk-6Snukas0x8q9SRlfytBqFEc9e2VOU4uJLiQTl154YxmAvbVgd7N7JrenoAd9m6fCfsq35trhrlR5uGAYZhIyLTQCITBeAaMHLFWbtFiscjWhIq26Q4TWLplqasedza1HFpUpp7cAIJVvV_DM7xd_6m4jKAjyu6MasUehDLPORUo4QV4xDXNNRq_G9s6EzzfKkyo7ubPO9K9u8" />
+                        </div>
+                        <h4 class="font-headline font-bold text-on-surface text-lg mb-1">NovaWatch Series 7</h4>
+                        <p class="text-primary font-bold mb-6">Rp 3.299.000</p>
+                        <button
+                            class="w-full py-3 rounded-lg border border-outline-variant/20 hover:bg-primary/10 hover:border-primary transition-all flex items-center justify-center gap-2">
+                            <span class="material-symbols-outlined text-sm">shopping_bag</span>
+                            <span class="text-sm font-bold">Beli</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Newsletter / Promo: Asymmetrical Glassmorphism -->
+        <section class="px-6 mb-12">
+            <div
+                class="relative bg-surface-container rounded-[2rem] overflow-hidden p-12 md:p-24 flex flex-col md:flex-row items-center justify-between gap-12">
+                <div class="absolute -top-24 -left-24 w-96 h-96 bg-primary/10 blur-[120px] rounded-full"></div>
+                <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-secondary/10 blur-[120px] rounded-full"></div>
+                <div class="relative z-10 max-w-xl">
+                    <h3 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-on-surface mb-6">
+                        Update Inovasi Langsung ke Inbox Anda</h3>
+                    <p class="font-body text-on-surface-variant text-lg mb-8">Dapatkan akses eksklusif untuk peluncuran
+                        produk dan penawaran terbatas khusus komunitas TechNova.</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <input
+                            class="flex-1 bg-surface-container-highest/50 backdrop-blur-md border border-outline-variant/20 rounded-xl px-6 py-4 text-on-surface focus:ring-2 focus:ring-primary outline-none"
+                            placeholder="Alamat Email Anda" type="email" />
+                        <button
+                            class="bg-primary text-on-primary px-8 py-4 rounded-xl font-bold hover:bg-primary-container transition-colors shadow-lg shadow-primary/20">Berlangganan</button>
+                    </div>
+                </div>
+                <div class="relative z-10 hidden lg:block transform rotate-12">
+                    <div
+                        class="w-64 h-80 bg-surface-container-highest/40 backdrop-blur-2xl rounded-3xl border border-on-surface/10 flex flex-col items-center justify-center p-8 shadow-2xl">
+                        <span class="material-symbols-outlined text-6xl text-secondary mb-6"
+                            style="font-variation-settings: 'FILL' 1;">electric_bolt</span>
+                        <div class="text-center">
+                            <div class="text-3xl font-headline font-bold text-on-surface">50% OFF</div>
+                            <div class="text-xs font-bold text-on-surface-variant tracking-[0.2em] uppercase mt-2">
+                                Special Member</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- BottomNavBar for Mobile -->
+    <nav
+        class="md:hidden fixed bottom-0 left-0 w-full bg-[#121416]/90 backdrop-blur-2xl border-t border-[#414754]/15 z-50 flex justify-around items-center px-4 pb-6 pt-2">
+        <a class="flex flex-col items-center justify-center bg-[#4a8eff]/10 text-[#adc7ff] rounded-2xl px-5 py-2"
+            href="#">
+            <span class="material-symbols-outlined">home</span>
+            <span class="font-['Manrope'] font-medium text-[11px] mt-1">Home</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-[#e2e2e5]/50 px-5 py-2 hover:text-[#adc7ff] transition-transform active:scale-90"
+            href="#">
+            <span class="material-symbols-outlined">grid_view</span>
+            <span class="font-['Manrope'] font-medium text-[11px] mt-1">Catalog</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-[#e2e2e5]/50 px-5 py-2 hover:text-[#adc7ff] transition-transform active:scale-90"
+            href="#">
+            <span class="material-symbols-outlined">shopping_bag</span>
+            <span class="font-['Manrope'] font-medium text-[11px] mt-1">Cart</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-[#e2e2e5]/50 px-5 py-2 hover:text-[#adc7ff] transition-transform active:scale-90"
+            href="#">
+            <span class="material-symbols-outlined">person</span>
+            <span class="font-['Manrope'] font-medium text-[11px] mt-1">Account</span>
+        </a>
+    </nav>
+    <!-- FAB: Only for specific context - on Homepage let it be 'Contact Us' or 'Search' -->
+    <button
+        class="fixed right-6 bottom-24 md:bottom-8 w-14 h-14 bg-secondary-container text-on-secondary-container rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-40">
+        <span class="material-symbols-outlined">support_agent</span>
+    </button>
+</body>
+
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#690005",
+                        "surface-container-high": "#282a2c",
+                        "secondary-fixed": "#ffdcc3",
+                        "surface-dim": "#121416",
+                        "surface-tint": "#adc7ff",
+                        "tertiary-container": "#929090",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "inverse-on-surface": "#2f3133",
+                        "primary-fixed": "#d8e2ff",
+                        "on-primary-fixed-variant": "#004493",
+                        "secondary-container": "#fd8b00",
+                        "surface-container": "#1e2022",
+                        "on-error-container": "#ffdad6",
+                        "primary": "#adc7ff",
+                        "on-tertiary-container": "#2a2a29",
+                        "on-primary-container": "#00285b",
+                        "on-secondary-fixed": "#2f1500",
+                        "outline": "#8b90a0",
+                        "tertiary": "#c8c6c5",
+                        "on-primary-fixed": "#001a41",
+                        "on-secondary-fixed-variant": "#6e3900",
+                        "secondary": "#ffb77d",
+                        "on-secondary-container": "#603100",
+                        "surface-variant": "#333537",
+                        "surface": "#121416",
+                        "on-tertiary-fixed-variant": "#474646",
+                        "primary-container": "#4a8eff",
+                        "on-secondary": "#4d2600",
+                        "surface-container-highest": "#333537",
+                        "tertiary-fixed": "#e5e2e1",
+                        "surface-container-lowest": "#0c0e10",
+                        "inverse-primary": "#005bc0",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-background": "#e2e2e5",
+                        "on-primary": "#002e68",
+                        "on-surface-variant": "#c1c6d7",
+                        "outline-variant": "#414754",
+                        "surface-bright": "#37393b",
+                        "inverse-surface": "#e2e2e5",
+                        "surface-container-low": "#1a1c1e",
+                        "secondary-fixed-dim": "#ffb77d",
+                        "on-surface": "#e2e2e5",
+                        "on-tertiary": "#313030",
+                        "error": "#ffb4ab",
+                        "primary-fixed-dim": "#adc7ff",
+                        "background": "#121416"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-background text-on-background min-h-screen">
+    <!-- TopAppBar -->
+    <header
+        class="fixed top-0 w-full z-50 bg-[#121416]/80 backdrop-blur-xl shadow-[0_20px_40px_-10px_rgba(226,226,229,0.06)]">
+        <div class="flex flex-col w-full px-6 py-4 max-w-none">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                    <button
+                        class="material-symbols-outlined text-[#adc7ff] hover:bg-[#333537] transition-colors duration-300 p-2 rounded-lg">menu</button>
+                    <span
+                        class="text-2xl font-bold text-[#e2e2e5] tracking-tighter font-['Space_Grotesk']">TechNova</span>
+                </div>
+                <!-- Desktop Navigation (Semantic Mapping: Catalog Active) -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a class="text-[#e2e2e5]/70 font-['Manrope'] font-medium hover:text-[#adc7ff] transition-colors"
+                        href="beranda.html">Home</a>
+                    <a class="text-[#e2e2e5]/70 font-['Manrope'] font-medium hover:text-[#adc7ff] transition-colors"
+                        href="katalog.html">Catalog</a>
+                    <a class="text-[#adc7ff] font-bold border-b-2 border-[#adc7ff] font-['Manrope'] py-1"
+                        href="keranjang belanja.html">Cart</a>
+                    <a class="text-[#e2e2e5]/70 font-['Manrope'] font-medium hover:text-[#adc7ff] transition-colors"
+                        href="account.html">Account</a>
+                </nav>
+                <div class="flex items-center gap-2">
+                    <button
+                        class="material-symbols-outlined text-[#adc7ff] hover:bg-[#333537] transition-colors duration-300 p-2 rounded-lg">shopping_cart</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="pt-28 pb-20 px-6 max-w-7xl mx-auto">
+        <div class="flex flex-col lg:flex-row gap-12">
+            <!-- Left Column: Checkout Forms -->
+            <div class="flex-1 space-y-12">
+                <section>
+                    <div class="flex items-center gap-3 mb-8">
+                        <span
+                            class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold text-sm">1</span>
+                        <h2 class="text-2xl font-bold tracking-tight">Alamat Pengiriman</h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-surface-container-low p-8 rounded-xl">
+                        <div class="col-span-2 space-y-2">
+                            <label class="text-xs font-bold uppercase tracking-widest text-primary-fixed-dim">Nama
+                                Lengkap</label>
+                            <input
+                                class="w-full bg-surface-container-highest border-none focus:ring-2 focus:ring-primary rounded-lg p-4 text-on-surface placeholder:text-on-surface-variant/40 transition-all"
+                                placeholder="Sesilia Putri" type="text" />
+                        </div>
+                        <div class="col-span-2 space-y-2">
+                            <label class="text-xs font-bold uppercase tracking-widest text-primary-fixed-dim">Alamat
+                                Lengkap</label>
+                            <textarea
+                                class="w-full bg-surface-container-highest border-none focus:ring-2 focus:ring-primary rounded-lg p-4 text-on-surface placeholder:text-on-surface-variant/40 transition-all"
+                                placeholder="Jl. Sudirman No. 123, Central Business District" rows="3"></textarea>
+                        </div>
+                        <div class="space-y-2">
+                            <label
+                                class="text-xs font-bold uppercase tracking-widest text-primary-fixed-dim">Kota</label>
+                            <input
+                                class="w-full bg-surface-container-highest border-none focus:ring-2 focus:ring-primary rounded-lg p-4 text-on-surface placeholder:text-on-surface-variant/40 transition-all"
+                                placeholder="Pemalang" type="text" />
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold uppercase tracking-widest text-primary-fixed-dim">Kode
+                                Pos</label>
+                            <input
+                                class="w-full bg-surface-container-highest border-none focus:ring-2 focus:ring-primary rounded-lg p-4 text-on-surface placeholder:text-on-surface-variant/40 transition-all"
+                                placeholder="12190" type="text" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="flex items-center gap-3 mb-8">
+                        <span
+                            class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold text-sm">2</span>
+                        <h2 class="text-2xl font-bold tracking-tight">Metode Pembayaran</h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <!-- Credit Card -->
+                        <label class="relative group cursor-pointer">
+                            <input checked="" class="sr-only peer" name="payment" type="radio" />
+                            <div
+                                class="flex flex-col items-center justify-center p-6 bg-surface-container-low rounded-xl border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary/5 transition-all h-full hover:bg-surface-container-high">
+                                <span class="material-symbols-outlined text-3xl mb-3 text-primary">credit_card</span>
+                                <span class="text-sm font-bold">Kartu Kredit</span>
+                            </div>
+                        </label>
+                        <!-- E-Wallet -->
+                        <label class="relative group cursor-pointer">
+                            <input class="sr-only peer" name="payment" type="radio" />
+                            <div
+                                class="flex flex-col items-center justify-center p-6 bg-surface-container-low rounded-xl border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary/5 transition-all h-full hover:bg-surface-container-high">
+                                <span
+                                    class="material-symbols-outlined text-3xl mb-3 text-secondary">account_balance_wallet</span>
+                                <span class="text-sm font-bold">E-Wallet</span>
+                            </div>
+                        </label>
+                        <!-- Bank Transfer -->
+                        <label class="relative group cursor-pointer">
+                            <input class="sr-only peer" name="payment" type="radio" />
+                            <div
+                                class="flex flex-col items-center justify-center p-6 bg-surface-container-low rounded-xl border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary/5 transition-all h-full hover:bg-surface-container-high">
+                                <span
+                                    class="material-symbols-outlined text-3xl mb-3 text-tertiary">account_balance</span>
+                                <span class="text-sm font-bold">Bank Transfer</span>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="mt-6 p-8 bg-surface-container-low rounded-xl space-y-6">
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold uppercase tracking-widest text-primary-fixed-dim">Nomor
+                                Kartu</label>
+                            <div class="relative">
+                                <input
+                                    class="w-full bg-surface-container-highest border-none focus:ring-2 focus:ring-primary rounded-lg p-4 text-on-surface placeholder:text-on-surface-variant/40 transition-all pl-12"
+                                    placeholder="0000 0000 0000 0000" type="text" />
+                                <span
+                                    class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant/60">shield_lock</span>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold uppercase tracking-widest text-primary-fixed-dim">Masa
+                                    Berlaku</label>
+                                <input
+                                    class="w-full bg-surface-container-highest border-none focus:ring-2 focus:ring-primary rounded-lg p-4 text-on-surface placeholder:text-on-surface-variant/40 transition-all"
+                                    placeholder="MM/YY" type="text" />
+                            </div>
+                            <div class="space-y-2">
+                                <label
+                                    class="text-xs font-bold uppercase tracking-widest text-primary-fixed-dim">CVV</label>
+                                <input
+                                    class="w-full bg-surface-container-highest border-none focus:ring-2 focus:ring-primary rounded-lg p-4 text-on-surface placeholder:text-on-surface-variant/40 transition-all"
+                                    placeholder="123" type="password" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- Right Column: Order Summary -->
+            <div class="lg:w-96">
+                <div class="sticky top-28 bg-surface-container-high p-8 rounded-2xl shadow-2xl space-y-8">
+                    <h2 class="text-xl font-bold tracking-tight border-b border-outline-variant/15 pb-4">Ringkasan
+                        Pesanan</h2>
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-20 h-20 bg-surface-container-low rounded-lg overflow-hidden shrink-0">
+                                <img class="w-full h-full object-cover"
+                                    data-alt="close-up of a sleek modern premium smartphone with a glossy screen and thin bezels on a dark background"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsokY1xUbMW1Wcsqask8vrKiJ_LKyRyfoI4XPimwfub4AVJp3t5pHah4VFw9Lh99hbik3rDJAjae7pne4mTVDEMx-99FIjWqaQmSn525DxlqwxMV-2mdofYd2X6f0B-Ujjcn3-dRtOAt2L2xvsYNP3VSFdtAIsoS9E2Rw3araIgcFlRLdl3_hbxm1jrZtsuK83NRycPNfpuE5AJgYWcJI2fasMxn0cBrrsk9i4L2qXqlKQTFvOdQx1Gfl2NT_LHR1yyKVu2KNKcHo" />
+                            </div>
+                            <div class="flex flex-col justify-center">
+                                <span class="text-sm font-bold leading-tight">NovaPhone X1 Ultra</span>
+                                <span class="text-xs text-on-surface-variant">1x Unit • Space Black</span>
+                                <span class="text-sm font-medium text-primary mt-1">Rp 18.999.000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-3 pt-6 border-t border-outline-variant/15">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-on-surface-variant">Subtotal</span>
+                            <span>Rp 18.999.000</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-on-surface-variant">Pengiriman</span>
+                            <span class="text-secondary">Gratis</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-on-surface-variant">Pajak (11%)</span>
+                            <span>Rp 2.089.890</span>
+                        </div>
+                        <div class="flex justify-between text-xl font-extrabold text-primary pt-4">
+                            <span>Total</span>
+                            <span>Rp 21.088.890</span>
+                        </div>
+                    </div>
+                    <button
+                        class="w-full py-5 bg-gradient-to-r from-primary to-primary-container text-on-primary-container font-extrabold rounded-xl hover:shadow-[0_0_30px_rgba(74,142,255,0.4)] transition-all active:scale-95 group"
+                        onclick="document.getElementById('success-overlay').classList.remove('hidden')">
+                        <span class="flex items-center justify-center gap-2">
+                            Bayar Sekarang
+                            <span
+                                class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </span>
+                    </button>
+                    <p class="text-[10px] text-center text-on-surface-variant leading-relaxed px-4">
+                        Dengan mengklik "Bayar Sekarang", Anda menyetujui <a class="underline" href="#">Syarat &amp;
+                            Ketentuan</a> TechNova.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Success Overlay -->
+    <div class="hidden fixed inset-0 z-[100] flex items-center justify-center px-6" id="success-overlay">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-surface-container-lowest/90 backdrop-blur-sm"></div>
+        <!-- Modal -->
+        <div
+            class="relative bg-surface-container-high w-full max-w-md p-10 rounded-[2rem] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.6)] text-center animate-in fade-in zoom-in duration-300">
+            <div class="mb-8 relative inline-block">
+                <div class="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
+                    <span class="material-symbols-outlined text-6xl text-primary"
+                        style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                </div>
+                <!-- Animated ring effect (conceptual) -->
+                <div class="absolute inset-0 border-4 border-primary rounded-full animate-ping opacity-20"></div>
+            </div>
+            <h1 class="text-3xl font-bold tracking-tight mb-2">Pembayaran Berhasil!</h1>
+            <p class="text-on-surface-variant mb-8">Terima kasih telah berbelanja di TechNova. Pesanan Anda sedang kami
+                proses.</p>
+            <div class="bg-surface-container-low p-6 rounded-2xl mb-10 space-y-2">
+                <span class="text-[10px] uppercase tracking-[0.2em] font-bold text-primary">Nomor Pesanan</span>
+                <p class="text-xl font-headline font-bold text-on-surface">TN-99283-X10</p>
+            </div>
+            <div class="flex flex-col gap-4">
+                <button
+                    class="w-full py-4 bg-primary-container text-on-primary-container font-bold rounded-xl hover:bg-primary transition-colors active:scale-95">
+                    Lacak Pesanan
+                </button>
+                <button onclick="window.location.href='beranda.html'"
+                    class="w-full py-4 bg-transparent text-primary font-bold border-2 border-primary/20 rounded-xl hover:bg-primary/5 transition-colors active:scale-95">
+                    Kembali ke Beranda
+                </button>
+                <button onclick="history.back()" class="flex items-center gap-2 text-primary mb-4 hover:underline">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                    Kembali ke Keranjang
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- BottomNavBar (Mobile only) -->
+    <div class="flex items-center gap-2">
+        <nav class="hidden md:flex items-center gap-8 mr-8">
+            <a class="text-[#adc7ff] font-bold border-b-2 border-[#adc7ff] py-1 font-['Space_Grotesk'] tracking-tight"
+                href="beranda.html">Home</a>
+            <a class="text-[#e2e2e5]/70 hover:bg-[#333537] transition-colors duration-300 px-3 py-1 rounded font-['Space_Grotesk'] tracking-tight"
+                href="katalog.html">Catalog</a>
+            <a class="text-[#e2e2e5]/70 hover:bg-[#333537] transition-colors duration-300 px-3 py-1 rounded font-['Space_Grotesk'] tracking-tight"
+                href="keranjang belanja.html">Cart</a>
+            <a class="text-[#e2e2e5]/70 hover:bg-[#333537] transition-colors duration-300 px-3 py-1 rounded font-['Space_Grotesk'] tracking-tight"
+                href="account.html">Account</a>
+        </nav>
+</body>
+
+</html>

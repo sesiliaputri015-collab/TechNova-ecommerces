@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#690005",
+                        "surface-container-high": "#282a2c",
+                        "secondary-fixed": "#ffdcc3",
+                        "surface-dim": "#121416",
+                        "surface-tint": "#adc7ff",
+                        "tertiary-container": "#929090",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "inverse-on-surface": "#2f3133",
+                        "primary-fixed": "#d8e2ff",
+                        "on-primary-fixed-variant": "#004493",
+                        "secondary-container": "#fd8b00",
+                        "surface-container": "#1e2022",
+                        "on-error-container": "#ffdad6",
+                        "primary": "#adc7ff",
+                        "on-tertiary-container": "#2a2a29",
+                        "on-primary-container": "#00285b",
+                        "on-secondary-fixed": "#2f1500",
+                        "outline": "#8b90a0",
+                        "tertiary": "#c8c6c5",
+                        "on-primary-fixed": "#001a41",
+                        "on-secondary-fixed-variant": "#6e3900",
+                        "secondary": "#ffb77d",
+                        "on-secondary-container": "#603100",
+                        "surface-variant": "#333537",
+                        "surface": "#121416",
+                        "on-tertiary-fixed-variant": "#474646",
+                        "primary-container": "#4a8eff",
+                        "on-secondary": "#4d2600",
+                        "surface-container-highest": "#333537",
+                        "tertiary-fixed": "#e5e2e1",
+                        "surface-container-lowest": "#0c0e10",
+                        "inverse-primary": "#005bc0",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-background": "#e2e2e5",
+                        "on-primary": "#002e68",
+                        "on-surface-variant": "#c1c6d7",
+                        "outline-variant": "#414754",
+                        "surface-bright": "#37393b",
+                        "inverse-surface": "#e2e2e5",
+                        "surface-container-low": "#1a1c1e",
+                        "secondary-fixed-dim": "#ffb77d",
+                        "on-surface": "#e2e2e5",
+                        "on-tertiary": "#313030",
+                        "error": "#ffb4ab",
+                        "primary-fixed-dim": "#adc7ff",
+                        "background": "#121416"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-background text-on-background min-h-screen">
+    <!-- TopAppBar -->
+    <header
+        class="fixed top-0 w-full z-50 bg-[#121416]/80 backdrop-blur-xl shadow-[0_20px_40px_-10px_rgba(226,226,229,0.06)] px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-4">
+            <button
+                class="text-[#adc7ff] hover:bg-[#333537] transition-colors duration-300 p-2 rounded-lg active:scale-95 duration-200">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            <h1 class="text-2xl font-bold text-[#e2e2e5] tracking-tighter font-['Space_Grotesk']">TechNova</h1>
+        </div>
+        <nav class="hidden md:flex items-center gap-8">
+            <a class="text-[#adc7ff] font-bold border-b-2 border-[#adc7ff] font-['Space_Grotesk'] tracking-tight"
+                href="beranda.html">Home</a>
+            <a class="text-[#e2e2e5]/70 hover:bg-[#333537] transition-colors duration-300 font-['Space_Grotesk'] tracking-tight"
+                href="katalog.html">Catalog</a>
+            <a class="text-[#e2e2e5]/70 hover:bg-[#333537] transition-colors duration-300 font-['Space_Grotesk'] tracking-tight"
+                href="keranjang belanja.html">Cart</a>
+            <a class="text-[#e2e2e5]/70 hover:bg-[#333537] transition-colors duration-300 font-['Space_Grotesk'] tracking-tight"
+                href="account.html">Account</a>
+        </nav>
+        <div class="flex items-center gap-2">
+            <button
+                class="text-[#adc7ff] hover:bg-[#333537] transition-colors duration-300 p-2 rounded-lg active:scale-95 duration-200">
+                <span class="material-symbols-outlined">shopping_cart</span>
+            </button>
+        </div>
+    </header>
+    <main class="pt-24 pb-32 max-w-7xl mx-auto px-6">
+        <!-- Breadcrumbs -->
+        <nav class="mb-8 flex items-center gap-2 text-sm text-on-surface-variant font-label">
+            <span class="hover:text-primary cursor-pointer">Laptops</span>
+            <span class="material-symbols-outlined text-xs">chevron_right</span>
+            <span class="hover:text-primary cursor-pointer">Gaming Series</span>
+            <span class="material-symbols-outlined text-xs">chevron_right</span>
+            <span class="text-on-surface">Nova Blade X1</span>
+        </nav>
+        <!-- Product Gallery Section -->
+        <section class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <!-- Left: Gallery -->
+            <div class="lg:col-span-7 flex flex-col gap-6">
+                <div class="aspect-[16/10] bg-surface-container-low rounded-xl overflow-hidden group">
+                    <img alt="TechNova Gaming Laptop"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        data-alt="Sleek high-end gaming laptop on a dark desk with cyan and magenta ambient lighting, hyper-realistic, metallic finish"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7iyN_7No8r5J20joimdpfQ4dagGy-K94EdY-CIROaW7UsouX1p8JdK_2yurnnU_SeEY850zjq-cCfBWlTfKQ1g2HiBCix5Jf0v-_JacJiARfjkdh9XJqJ9Qlaydoh-PTP8LlbS0oXTKZp5Jsx0BG5dnr4OlAI8gfczKmymw7ptnPTnJ9kQmTetSc83cINBqxSRs_LkuAxHqZxgAf13tK_Zb4sRJPGbOQ4U-1J2qkrNiQoTvLC_5SJxvKhY3nMV5z5oll7dcATZNg" />
+                </div>
+                <div class="grid grid-cols-4 gap-4">
+                    <div
+                        class="aspect-square bg-surface-container-high rounded-lg overflow-hidden border-2 border-primary p-1">
+                        <img alt="Detail 1" class="w-full h-full object-cover rounded-md"
+                            data-alt="Close up of a gaming laptop backlit keyboard with RGB lighting in a dark room"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4C0SINOxUzqCdlz_7rfuRjY-rS0NvnEx09o_UaOTUgLM6qSMzjnHd9_ucR1tKuY8Mj_ISz5HLNcZmhT0FYWQG8XS-ouHKAzCABcUWIUAsj01OAQgejT8X8YHcrbp71fZP7_uB1-XeHskim03BvJ7ah5fM6_uA0wBrp8Vq3rO80vn3uUGG190vo5jkVkS_nRmJWtJaIpkSJytsdpQ4b6DdqZXe8v6uQ0mcrpCRd6Icw1oIDR8LjbMBdmqJFz8HHKWx3FvlPZsTOkA" />
+                    </div>
+                    <div
+                        class="aspect-square bg-surface-container-high rounded-lg overflow-hidden hover:opacity-80 cursor-pointer p-1">
+                        <img alt="Detail 2" class="w-full h-full object-cover rounded-md"
+                            data-alt="Side profile view of a very thin laptop showing various ports and metallic chassis"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfXcWfqLgePqHbfqPl55zxg7C37RDG84jZ7vJYF5K5dwC5ws15XSdEP5hZcdiVjVGH-nKjCIY_GK9aNU08tp774hEdQgpD6L3aqH2jGr59Rc-KvLt4AZorscnf0m1CLpMlYxJbC9NYawnY5Hq0t7SEwZ1Z3ViclI0B1vgoCY98-i1H723ndi3MdROIDmvT6y9JGvXNVa_zcygvKgRykVmDtTq9bXH8LOj-fu2BEL8XF4xAuYHPBZxrZIzzKbObVRV0_dO-NtErg8A" />
+                    </div>
+                    <div
+                        class="aspect-square bg-surface-container-high rounded-lg overflow-hidden hover:opacity-80 cursor-pointer p-1">
+                        <img alt="Detail 3" class="w-full h-full object-cover rounded-md"
+                            data-alt="Top view of an open laptop showing a high resolution display with vibrant abstract wallpaper"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZaLTZ9q9MLlabv0c86rm3d210WktnJcH3enH38p3-QJ8jS0aKc6FB39s4qWrvi23PWqFd9Fc3lo2IfjRtB-uQc_vHJFOCD02Ibifx2OLlZpYEeqVNB_eBJ_60YrC4ocyQB9AxEjhl99EwGlcxHMuGHDEsMZNa3cjb7yiyQDVKqK_CaJ6Bcvq-tZLX4am28dEDUFDbzkRufg97Ikek14MprG8DtJCGI9RA4hZZXKkvQ413uGbQ0n243DKovWqJur6TisQt2gGwiuA" />
+                    </div>
+                    <div
+                        class="aspect-square bg-surface-container-high rounded-lg overflow-hidden hover:opacity-80 cursor-pointer p-1">
+                        <img alt="Detail 4" class="w-full h-full object-cover rounded-md"
+                            data-alt="Gaming setup with mouse and headset next to a glowing laptop on a professional gaming desk"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlJjRSMB5M6m0_gYp6UnE6XE7FRCqeE-4sqy0gVu0Fe05nor0MYDV0bfJ_erg8XPg5FwU5wHX9pRcG7eiZTI_B28i_dyd10R2LxOZ_ARCP7CzB_YZj7IangXXBM9Qu1aHo8MzECsXIGyot4YVqxq2h3mt_V4lNnC_xskderwfsdnlXOBJztnC_EVuwGcqNt4Cx7qrIZ-cIQ9k5Gi7ruKM3kRcpDqthkMUV8xep-xRKxCuBGYokFPoCDEswmO4WivwKlUkXCLX0Z5c" />
+                    </div>
+                </div>
+            </div>
+            <!-- Right: Product Info -->
+            <div class="lg:col-span-5 flex flex-col">
+                <div class="mb-2">
+                    <span
+                        class="bg-secondary-container text-on-secondary-container text-[10px] font-extrabold uppercase tracking-[0.2em] px-3 py-1 rounded-full">New
+                        Arrival</span>
+                </div>
+                <h2 class="text-headline text-4xl font-bold tracking-tight mb-2 text-on-surface">Nova Blade X1 Ultra
+                </h2>
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="flex items-center text-secondary">
+                        <span class="material-symbols-outlined text-sm"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-sm"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-sm"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-sm"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-sm"
+                            style="font-variation-settings: 'FILL' 1;">star_half</span>
+                    </div>
+                    <span class="text-sm text-on-surface-variant font-label">(124 Reviews)</span>
+                </div>
+                <div class="mb-8">
+                    <div class="text-primary text-3xl font-bold font-headline">Rp 34.999.000</div>
+                    <div class="text-on-surface-variant line-through text-lg opacity-50">Rp 38.500.000</div>
+                </div>
+                <!-- Colors -->
+                <div class="mb-8">
+                    <label
+                        class="block text-sm font-bold uppercase tracking-widest text-on-surface-variant mb-4 font-label">Available
+                        Colors</label>
+                    <div class="flex gap-4">
+                        <button
+                            class="w-10 h-10 rounded-full bg-[#1e2022] border-2 border-primary ring-2 ring-offset-4 ring-offset-background ring-transparent flex items-center justify-center">
+                            <div class="w-6 h-6 rounded-full bg-[#121416]"></div>
+                        </button>
+                        <button
+                            class="w-10 h-10 rounded-full bg-[#333537] border-2 border-transparent hover:border-outline-variant flex items-center justify-center">
+                            <div class="w-6 h-6 rounded-full bg-[#414754]"></div>
+                        </button>
+                        <button
+                            class="w-10 h-10 rounded-full bg-[#e2e2e5] border-2 border-transparent hover:border-outline-variant flex items-center justify-center">
+                            <div class="w-6 h-6 rounded-full bg-[#c8c6c5]"></div>
+                        </button>
+                    </div>
+                </div>
+                <!-- Features -->
+                <div class="mb-10 space-y-4">
+                    <h3 class="text-sm font-bold uppercase tracking-widest text-on-surface-variant font-label">Key
+                        Specifications</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <span
+                                class="material-symbols-outlined text-primary text-xl mt-0.5">processing_cluster</span>
+                            <div>
+                                <p class="text-on-surface font-bold text-sm">Intel® Core™ i9-14900HX</p>
+                                <p class="text-on-surface-variant text-xs">24 Cores / 32 Threads / 5.8 GHz Max Turbo</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-primary text-xl mt-0.5">memory</span>
+                            <div>
+                                <p class="text-on-surface font-bold text-sm">32GB DDR5-5600 RAM</p>
+                                <p class="text-on-surface-variant text-xs">Dual-channel memory support</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span
+                                class="material-symbols-outlined text-primary text-xl mt-0.5">settings_input_hdmi</span>
+                            <div>
+                                <p class="text-on-surface font-bold text-sm">NVIDIA® GeForce RTX™ 4090</p>
+                                <p class="text-on-surface-variant text-xs">16GB GDDR6X / 175W TGP / DLSS 3.5</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-primary text-xl mt-0.5">monitor</span>
+                            <div>
+                                <p class="text-on-surface font-bold text-sm">16" QHD+ Mini-LED 240Hz</p>
+                                <p class="text-on-surface-variant text-xs">100% DCI-P3 / HDR 1000 / 3ms Response</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 mt-auto">
+                    <button
+                        class="flex-1 bg-primary-container text-on-primary-container py-4 rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-secondary-container transition-all active:scale-95 duration-200 shadow-lg shadow-primary-container/20">
+                        <span class="material-symbols-outlined">add_shopping_cart</span>
+                        Tambah ke Keranjang
+                    </button>
+                    <button
+                        class="flex-1 border border-outline-variant/20 bg-surface-container-high py-4 rounded-lg font-bold text-primary hover:bg-surface-container-highest transition-all active:scale-95 duration-200">
+                        Beli Sekarang
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- Detailed Description Section -->
+        <section class="mt-24 pt-24 border-t border-outline-variant/10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-headline text-3xl font-bold mb-6">Engineered for Victory</h2>
+                    <p class="text-on-surface-variant leading-relaxed mb-6 font-body">
+                        Nova Blade X1 Ultra bukan sekadar laptop gaming; ini adalah mahakarya teknik yang dirancang
+                        untuk performa tanpa kompromi. Dengan sistem pendingin vapor-chamber terbaru dan sasis
+                        magnesium-alloy yang ringan, Anda mendapatkan kekuatan desktop dalam bentuk portabel yang
+                        menawan.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="bg-surface-container-low p-6 rounded-xl">
+                            <div class="text-primary font-bold text-2xl font-headline mb-1">0.8mm</div>
+                            <div class="text-xs text-on-surface-variant uppercase tracking-wider font-label">Thinnest
+                                Blade Fan</div>
+                        </div>
+                        <div class="bg-surface-container-low p-6 rounded-xl">
+                            <div class="text-primary font-bold text-2xl font-headline mb-1">1100 Nits</div>
+                            <div class="text-xs text-on-surface-variant uppercase tracking-wider font-label">Peak
+                                Brightness</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-surface-container-low rounded-2xl p-4 overflow-hidden shadow-2xl">
+                    <img alt="Laptop Cooling System"
+                        class="w-full h-auto rounded-xl grayscale hover:grayscale-0 transition-all duration-1000"
+                        data-alt="Interior x-ray view showing advanced cooling heat pipes and dual fans inside a thin gaming laptop"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJoXn2Qq3DYEtc1qihODfpfa5w2W2tRAx8sV2JDRz8MlqvHNcr_g6SOvlCvKnMojDrYRuiLgTDdXUSO-yKGy_V0eTOSUZYpvj3ki-NxI8O_KUCx6RNKS5KOZqJnroVVF1x2A_RqWrJOKOPH01ZykKI8gl3bKlYrq1OTDci7lCWe3SuBFBpqmmJHiHJYHIVtnt1eLFzla2h-sA-tWn1Urjsw5ZHz-9SaVUsjsETvsEjbtsl6PEDGkvVR6Zj1wxm-RfWl1Hml32gXzg" />
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- BottomNavBar -->
+    <nav
+        class="md:hidden fixed bottom-0 left-0 w-full bg-[#121416]/90 backdrop-blur-2xl flex justify-around items-center px-4 pb-6 pt-2 z-50 border-t border-[#414754]/15">
+        <button
+            class="flex flex-col items-center justify-center text-[#e2e2e5]/50 px-5 py-2 hover:text-[#adc7ff] active:scale-90 transition-transform">
+            <span class="material-symbols-outlined">home</span>
+            <span class="font-['Manrope'] font-medium text-[11px]">Home</span>
+        </button>
+        <button
+            class="flex flex-col items-center justify-center text-[#e2e2e5]/50 px-5 py-2 hover:text-[#adc7ff] active:scale-90 transition-transform">
+            <span class="material-symbols-outlined">grid_view</span>
+            <span class="font-['Manrope'] font-medium text-[11px]">Catalog</span>
+        </button>
+        <button
+            class="flex flex-col items-center justify-center text-[#e2e2e5]/50 px-5 py-2 hover:text-[#adc7ff] active:scale-90 transition-transform">
+            <span class="material-symbols-outlined">shopping_bag</span>
+            <span class="font-['Manrope'] font-medium text-[11px]">Cart</span>
+        </button>
+        <button
+            class="flex flex-col items-center justify-center text-[#e2e2e5]/50 px-5 py-2 hover:text-[#adc7ff] active:scale-90 transition-transform">
+            <span class="material-symbols-outlined">person</span>
+            <span class="font-['Manrope'] font-medium text-[11px]">Account</span>
+        </button>
+    </nav>
+</body>
+
+</html>

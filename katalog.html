@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>TechNova | Product Catalog</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#690005",
+                        "surface-container-high": "#282a2c",
+                        "secondary-fixed": "#ffdcc3",
+                        "surface-dim": "#121416",
+                        "surface-tint": "#adc7ff",
+                        "tertiary-container": "#929090",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "inverse-on-surface": "#2f3133",
+                        "primary-fixed": "#d8e2ff",
+                        "on-primary-fixed-variant": "#004493",
+                        "secondary-container": "#fd8b00",
+                        "surface-container": "#1e2022",
+                        "on-error-container": "#ffdad6",
+                        "primary": "#adc7ff",
+                        "on-tertiary-container": "#2a2a29",
+                        "on-primary-container": "#00285b",
+                        "on-secondary-fixed": "#2f1500",
+                        "outline": "#8b90a0",
+                        "tertiary": "#c8c6c5",
+                        "on-primary-fixed": "#001a41",
+                        "on-secondary-fixed-variant": "#6e3900",
+                        "secondary": "#ffb77d",
+                        "on-secondary-container": "#603100",
+                        "surface-variant": "#333537",
+                        "surface": "#121416",
+                        "on-tertiary-fixed-variant": "#474646",
+                        "primary-container": "#4a8eff",
+                        "on-secondary": "#4d2600",
+                        "surface-container-highest": "#333537",
+                        "tertiary-fixed": "#e5e2e1",
+                        "surface-container-lowest": "#0c0e10",
+                        "inverse-primary": "#005bc0",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-background": "#e2e2e5",
+                        "on-primary": "#002e68",
+                        "on-surface-variant": "#c1c6d7",
+                        "outline-variant": "#414754",
+                        "surface-bright": "#37393b",
+                        "inverse-surface": "#e2e2e5",
+                        "surface-container-low": "#1a1c1e",
+                        "secondary-fixed-dim": "#ffb77d",
+                        "on-surface": "#e2e2e5",
+                        "on-tertiary": "#313030",
+                        "error": "#ffb4ab",
+                        "primary-fixed-dim": "#adc7ff",
+                        "background": "#121416"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-surface text-on-surface">
+    <!-- TopAppBar -->
+    <header
+        class="fixed top-0 w-full z-50 bg-[#121416]/80 backdrop-blur-xl shadow-[0_20px_40px_-10px_rgba(226,226,229,0.06)]">
+        <div class="flex flex-col w-full px-6 py-4 max-w-none">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                    <button
+                        class="material-symbols-outlined text-[#adc7ff] hover:bg-[#333537] transition-colors duration-300 p-2 rounded-lg">menu</button>
+                    <span
+                        class="text-2xl font-bold text-[#e2e2e5] tracking-tighter font-['Space_Grotesk']">TechNova</span>
+                </div>
+                <!-- Desktop Navigation (Semantic Mapping: Catalog Active) -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a class="text-[#e2e2e5]/70 font-['Manrope'] font-medium hover:text-[#adc7ff] transition-colors"
+                        href="beranda.html">Home</a>
+                    <a class="text-[#adc7ff] font-bold border-b-2 border-[#adc7ff] font-['Manrope'] py-1"
+                        href="katalog.html">Catalog</a>
+                    <a class="text-[#e2e2e5]/70 font-['Manrope'] font-medium hover:text-[#adc7ff] transition-colors"
+                        href="keranjang belanja.html">Cart</a>
+                    <a class="text-[#e2e2e5]/70 font-['Manrope'] font-medium hover:text-[#adc7ff] transition-colors"
+                        href="account.html">Account</a>
+                </nav>
+                <div class="flex items-center gap-2">
+                    <button
+                        class="material-symbols-outlined text-[#adc7ff] hover:bg-[#333537] transition-colors duration-300 p-2 rounded-lg">shopping_cart</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="pt-24 pb-32 px-6 max-w-[1440px] mx-auto min-h-screen">
+        <div class="flex flex-col md:flex-row gap-12">
+            <!-- Sidebar/Filter -->
+            <aside class="w-full md:w-72 flex-shrink-0">
+                <div class="sticky top-28 space-y-10">
+                    <div>
+                        <h2 class="font-headline text-xs uppercase tracking-[0.2em] text-primary mb-6">Filter By</h2>
+                        <!-- Price Range -->
+                        <div class="mb-8">
+                            <label class="block font-headline text-sm font-bold mb-4">Rentang Harga</label>
+                            <div class="space-y-4">
+                                <div class="h-1 bg-surface-container-high rounded-full relative">
+                                    <div class="absolute left-0 right-1/4 h-full bg-primary-container rounded-full">
+                                    </div>
+                                    <div
+                                        class="absolute left-0 w-4 h-4 bg-on-surface border-2 border-primary rounded-full -top-1.5 cursor-pointer">
+                                    </div>
+                                    <div
+                                        class="absolute right-1/4 w-4 h-4 bg-on-surface border-2 border-primary rounded-full -top-1.5 cursor-pointer">
+                                    </div>
+                                </div>
+                                <div class="flex justify-between text-xs text-on-surface-variant font-medium">
+                                    <span>Rp 0</span>
+                                    <span>Rp 25.000.000</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Brands -->
+                        <div class="mb-8">
+                            <label class="block font-headline text-sm font-bold mb-4">Merk</label>
+                            <div class="grid grid-cols-2 gap-2">
+                                <button
+                                    class="px-4 py-2 bg-surface-container-high text-xs rounded-lg text-left hover:bg-surface-variant transition-colors border border-transparent">Apple</button>
+                                <button
+                                    class="px-4 py-2 bg-primary-container/10 text-xs rounded-lg text-left text-primary border border-primary/30">Samsung</button>
+                                <button
+                                    class="px-4 py-2 bg-surface-container-high text-xs rounded-lg text-left hover:bg-surface-variant transition-colors border border-transparent">Sony</button>
+                                <button
+                                    class="px-4 py-2 bg-surface-container-high text-xs rounded-lg text-left hover:bg-surface-variant transition-colors border border-transparent">Dell</button>
+                            </div>
+                        </div>
+                        <!-- Rating -->
+                        <div class="mb-8">
+                            <label class="block font-headline text-sm font-bold mb-4">Rating</label>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-3 cursor-pointer group">
+                                    <input
+                                        class="rounded border-outline-variant bg-surface-container-high text-primary-container focus:ring-primary-container w-4 h-4"
+                                        type="checkbox" />
+                                    <div class="flex gap-1 text-secondary">
+                                        <span class="material-symbols-outlined text-sm"
+                                            style="font-variation-settings: 'FILL' 1;">star</span>
+                                        <span class="material-symbols-outlined text-sm"
+                                            style="font-variation-settings: 'FILL' 1;">star</span>
+                                        <span class="material-symbols-outlined text-sm"
+                                            style="font-variation-settings: 'FILL' 1;">star</span>
+                                        <span class="material-symbols-outlined text-sm"
+                                            style="font-variation-settings: 'FILL' 1;">star</span>
+                                        <span class="material-symbols-outlined text-sm">star</span>
+                                    </div>
+                                    <span
+                                        class="text-xs text-on-surface-variant group-hover:text-on-surface transition-colors">4+
+                                        Stars</span>
+                                </label>
+                            </div>
+                        </div>
+                        <!-- Specifications (Accordion Style) -->
+                        <div>
+                            <label class="block font-headline text-sm font-bold mb-4">Spesifikasi</label>
+                            <div class="space-y-4">
+                                <div
+                                    class="flex items-center justify-between py-2 border-b border-outline-variant/15 text-xs">
+                                    <span>Processor</span>
+                                    <span class="material-symbols-outlined text-sm">expand_more</span>
+                                </div>
+                                <div
+                                    class="flex items-center justify-between py-2 border-b border-outline-variant/15 text-xs">
+                                    <span>Memory (RAM)</span>
+                                    <span class="material-symbols-outlined text-sm">expand_more</span>
+                                </div>
+                                <div
+                                    class="flex items-center justify-between py-2 border-b border-outline-variant/15 text-xs">
+                                    <span>Storage</span>
+                                    <span class="material-symbols-outlined text-sm">expand_more</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <!-- Main Content: Product Grid -->
+            <section class="flex-grow">
+                <div class="flex items-center justify-between mb-12">
+                    <div>
+                        <h1 class="font-headline text-4xl font-bold tracking-tight text-on-surface mb-2">New Arrivals
+                        </h1>
+                        <p class="text-on-surface-variant text-sm font-body">Curated technical excellence for your
+                            digital lifestyle.</p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <span class="text-xs font-headline uppercase tracking-widest text-on-surface-variant">Sort
+                            By</span>
+                        <select
+                            class="bg-surface-container-high border-none rounded-lg text-xs font-bold py-2 px-4 focus:ring-1 focus:ring-primary-container pr-10">
+                            <option>Latest Release</option>
+                            <option>Price: Low to High</option>
+                            <option>Top Rated</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- Grid Bento-ish Layout -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+                    <!-- Product Card 1 -->
+                    <div class="group cursor-pointer">
+                        <div
+                            class="aspect-[4/5] bg-surface-container-low rounded-xl overflow-hidden relative mb-6 transition-all duration-500 group-hover:shadow-[0_30px_60px_-15px_rgba(74,142,255,0.15)] group-hover:-translate-y-2">
+                            <img alt="MacBook Pro"
+                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                                data-alt="high-end minimalist workspace with a sleek metallic laptop on a dark desk with moody soft lighting and clean aesthetic"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVL4Ws7Y601GeopUXIjV4W-ilCItPKRjbia2uGhdhoyidyGY6Gkse_RosM6zj6LHawJez5uAGmlT7Wau2OFG-Z_Sc_dKvOSuQ9xsUXzMI6JXkms3aQf8HaFy7QTJTzbJkMZ7_yyLuOOoAncQ9Sl11hiez5GqVn2nK3lsxfSG5meDwiyeIxWlj2A7ne0FcoGRVrOLoL5LgepCH5geSoXcMceSES_qKlLsmQkllJTDRoavZTwYtQlaelwBCJpYB5ZHIKRB8dJHhR-0I" />
+                            <div
+                                class="absolute top-4 right-4 bg-secondary-container text-on-secondary-container text-[10px] font-bold px-3 py-1 rounded-full">
+                                Diskon 10%
+                            </div>
+                            <button
+                                class="absolute bottom-4 right-4 w-12 h-12 bg-on-surface text-surface rounded-full flex items-center justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                                <span class="material-symbols-outlined">add_shopping_cart</span>
+                            </button>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <span
+                                    class="text-[10px] font-headline uppercase tracking-widest text-primary">Workstation</span>
+                                <div class="flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-xs text-secondary"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="text-xs font-bold">4.9</span>
+                                </div>
+                            </div>
+                            <h3 class="font-headline text-lg font-bold group-hover:text-primary transition-colors">
+                                NovaBook M3 Pro</h3>
+                            <div class="flex items-baseline gap-2">
+                                <p class="text-primary-container font-headline font-bold">Rp 32.400.000</p>
+                                <p class="text-xs text-on-surface-variant line-through">Rp 36.000.000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Card 2 -->
+                    <div class="group cursor-pointer">
+                        <div
+                            class="aspect-[4/5] bg-surface-container-low rounded-xl overflow-hidden relative mb-6 transition-all duration-500 group-hover:shadow-[0_30px_60px_-15px_rgba(74,142,255,0.15)] group-hover:-translate-y-2">
+                            <img alt="Sony Headphones"
+                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                                data-alt="professional studio headphones on a minimalist stand with deep shadows and soft rim lighting tech atmosphere"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDti-YtrtbBllnSHpuS_dXCywzthsjdPceThpmXStGQ74stYcoeKllpA5tMcCbgSxQlLIlKqk5IrLTfIKSLgjl6Om6a_2wJ6fLZpArMOKrgaWhBl8q-PIeN_Jq9auREdXQb9pz5CnGYG8dA25EXjOJIcAjsdYrNyEFEI6YA15r_TY00J4NsxNnoDa3ZDajctEHQhwe4mfvVeN9pYWCD0O-i4kkwXmKVtJWGCXjM6w-FKij3mXCqaOj4LxjpMDD5Kf4DwF1-fny-6A" />
+                            <div
+                                class="absolute top-4 right-4 bg-secondary-container text-on-secondary-container text-[10px] font-bold px-3 py-1 rounded-full">
+                                Diskon 10%
+                            </div>
+                            <button
+                                class="absolute bottom-4 right-4 w-12 h-12 bg-on-surface text-surface rounded-full flex items-center justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                                <span class="material-symbols-outlined">add_shopping_cart</span>
+                            </button>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <span
+                                    class="text-[10px] font-headline uppercase tracking-widest text-primary">Audio</span>
+                                <div class="flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-xs text-secondary"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="text-xs font-bold">4.8</span>
+                                </div>
+                            </div>
+                            <h3 class="font-headline text-lg font-bold group-hover:text-primary transition-colors">
+                                NovaSound X-1000</h3>
+                            <div class="flex items-baseline gap-2">
+                                <p class="text-primary-container font-headline font-bold">Rp 4.500.000</p>
+                                <p class="text-xs text-on-surface-variant line-through">Rp 5.000.000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Card 3 -->
+                    <div class="group cursor-pointer">
+                        <div
+                            class="aspect-[4/5] bg-surface-container-low rounded-xl overflow-hidden relative mb-6 transition-all duration-500 group-hover:shadow-[0_30px_60px_-15px_rgba(74,142,255,0.15)] group-hover:-translate-y-2">
+                            <img alt="Smartphone"
+                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                                data-alt="sleek modern smartphone display glowing in a dark environment with blue and orange ambient lighting reflections"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhzz3i72rva5Py2DFveCXHq9dXMLi_0Yq0n9LSddO1FF6d5bDISXbzw4-JHpMFvwOyCN5G86mXZZ5qQgJs2ltpFc2XFZhKp7f0Fce8jX7Id60YmWJoratt-r3iaUpINSvHgw0DGROflsWZ-MFPltMUpXUvO22FHU7v4L-wF3-wQZCuojf019nYhBNvexpnSGJkXys9lOoc0zyTWS-1LrFE1631J-M5ZsiV2vCUClvPHMjIdh_wsmFihs6sFFSyATjMNTUfA4t08mw" />
+                            <div
+                                class="absolute top-4 right-4 bg-secondary-container text-on-secondary-container text-[10px] font-bold px-3 py-1 rounded-full">
+                                Diskon 10%
+                            </div>
+                            <button
+                                class="absolute bottom-4 right-4 w-12 h-12 bg-on-surface text-surface rounded-full flex items-center justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                                <span class="material-symbols-outlined">add_shopping_cart</span>
+                            </button>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <span
+                                    class="text-[10px] font-headline uppercase tracking-widest text-primary">Mobile</span>
+                                <div class="flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-xs text-secondary"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="text-xs font-bold">5.0</span>
+                                </div>
+                            </div>
+                            <h3 class="font-headline text-lg font-bold group-hover:text-primary transition-colors">
+                                NovaPhone 15 Ultra</h3>
+                            <div class="flex items-baseline gap-2">
+                                <p class="text-primary-container font-headline font-bold">Rp 18.900.000</p>
+                                <p class="text-xs text-on-surface-variant line-through">Rp 21.000.000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Card 4 -->
+                    <div class="group cursor-pointer">
+                        <div
+                            class="aspect-[4/5] bg-surface-container-low rounded-xl overflow-hidden relative mb-6 transition-all duration-500 group-hover:shadow-[0_30px_60px_-15px_rgba(74,142,255,0.15)] group-hover:-translate-y-2">
+                            <img alt="Watch"
+                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                                data-alt="luxury smart watch with metallic finish on a black velvet surface dramatic light highlighting the screen"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9YKaXA8F8s5FpW9k8K5MylgQSEOMvsXaIte7n7IYjcSMMnxyFZ-4iX_Bj_PzWDzBMsLlcA_Xauw9_853C-k_dYaXrPbH6S2lTb881IaG9V3jxDhi7-vQ4JCXtSNaMZXbQKdVAvANZQBGN6J2zktZnK4pgZxsDEWf4pLIYuYbrSKoJ6h1tWbNeiyqNVU2vbjGxrxVutU39VRjXjQ5E1AOPXXaX7lZSd9_gm56J2VeW1a9k1BShm4GwvwWAIp7k2ilYBOmO5Nl0J6Y" />
+                            <div
+                                class="absolute top-4 right-4 bg-secondary-container text-on-secondary-container text-[10px] font-bold px-3 py-1 rounded-full">
+                                Diskon 10%
+                            </div>
+                            <button
+                                class="absolute bottom-4 right-4 w-12 h-12 bg-on-surface text-surface rounded-full flex items-center justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                                <span class="material-symbols-outlined">add_shopping_cart</span>
+                            </button>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <span
+                                    class="text-[10px] font-headline uppercase tracking-widest text-primary">Wearable</span>
+                                <div class="flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-xs text-secondary"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="text-xs font-bold">4.7</span>
+                                </div>
+                            </div>
+                            <h3 class="font-headline text-lg font-bold group-hover:text-primary transition-colors">
+                                NovaWatch Elite</h3>
+                            <div class="flex items-baseline gap-2">
+                                <p class="text-primary-container font-headline font-bold">Rp 7.200.000</p>
+                                <p class="text-xs text-on-surface-variant line-through">Rp 8.000.000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Card 5 -->
+                    <div class="group cursor-pointer">
+                        <div
+                            class="aspect-[4/5] bg-surface-container-low rounded-xl overflow-hidden relative mb-6 transition-all duration-500 group-hover:shadow-[0_30px_60px_-15px_rgba(74,142,255,0.15)] group-hover:-translate-y-2">
+                            <img alt="Smart Speaker"
+                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                                data-alt="futuristic smart home speaker with led ring glowing in blue minimalist shelf setting with plant in background"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnnw8JSyjmfO2JSVYAh-rXG7hC5WU05tk0VSbJ2sFlLC8uUp22eirxGL6w7HRjTaAEuQZ9bj1FG9gpvaly89dOVPwwy8dFsbZsSnlMsV0euEJhV-ceaIG9DRTzlw2LeozIjOvU09Tz_YQAwGMsvqy_MVmkIaWk6OtK-QdPnm4DDhFdzQ7Xa0CHMD6Nt52H7-TJymXYDCytiDnXpdFE8rTx9sKl83j6zJ7-MefJeqLyLSktlR52MEKFZCsZqhBUatCHrmuQZSnr9-M" />
+                            <div
+                                class="absolute top-4 right-4 bg-secondary-container text-on-secondary-container text-[10px] font-bold px-3 py-1 rounded-full">
+                                Diskon 10%
+                            </div>
+                            <button
+                                class="absolute bottom-4 right-4 w-12 h-12 bg-on-surface text-surface rounded-full flex items-center justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                                <span class="material-symbols-outlined">add_shopping_cart</span>
+                            </button>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <span class="text-[10px] font-headline uppercase tracking-widest text-primary">Smart
+                                    Home</span>
+                                <div class="flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-xs text-secondary"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="text-xs font-bold">4.6</span>
+                                </div>
+                            </div>
+                            <h3 class="font-headline text-lg font-bold group-hover:text-primary transition-colors">
+                                NovaHub Smart AI</h3>
+                            <div class="flex items-baseline gap-2">
+                                <p class="text-primary-container font-headline font-bold">Rp 2.250.000</p>
+                                <p class="text-xs text-on-surface-variant line-through">Rp 2.500.000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Card 6 -->
+                    <div class="group cursor-pointer">
+                        <div
+                            class="aspect-[4/5] bg-surface-container-low rounded-xl overflow-hidden relative mb-6 transition-all duration-500 group-hover:shadow-[0_30px_60px_-15px_rgba(74,142,255,0.15)] group-hover:-translate-y-2">
+                            <img alt="Keyboard"
+                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                                data-alt="high-end mechanical keyboard with rgb lighting under keycaps macro close-up dark aesthetic setup"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDG1x5ooavXS3V8uLGTXw1jRZ5xASjnQcfLqH1Lyn_gL4TqMynT8-T6hDUnCktC2ELJMKDJ_eIjsJZ8Sfbm22pETjbw2Pgrxil2w0UcuM0QibR2ZQ7aful44mCSxodeQN3CQ8Te-uSZOk1E1S6XCbYFI98sv7DTMa7OIiDImkxp-fv_Lifzx_kaUcycKg3jNTZFcT7k-ojgCvcKC8bFa8NTP74WU81VyaN37Liamp5w4pMRXtUrH8WeALaap85V7g2U9u_iGhIyr0Q" />
+                            <div
+                                class="absolute top-4 right-4 bg-secondary-container text-on-secondary-container text-[10px] font-bold px-3 py-1 rounded-full">
+                                Diskon 10%
+                            </div>
+                            <button
+                                class="absolute bottom-4 right-4 w-12 h-12 bg-on-surface text-surface rounded-full flex items-center justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                                <span class="material-symbols-outlined">add_shopping_cart</span>
+                            </button>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <span
+                                    class="text-[10px] font-headline uppercase tracking-widest text-primary">Accessories</span>
+                                <div class="flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-xs text-secondary"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="text-xs font-bold">4.9</span>
+                                </div>
+                            </div>
+                            <h3 class="font-headline text-lg font-bold group-hover:text-primary transition-colors">
+                                NovaKeys Mech-1</h3>
+                            <div class="flex items-baseline gap-2">
+                                <p class="text-primary-container font-headline font-bold">Rp 2.700.000</p>
+                                <p class="text-xs text-on-surface-variant line-through">Rp 3.000.000</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pagination -->
+                <div class="mt-24 flex justify-center">
+                    <nav class="flex items-center gap-2">
+                        <button
+                            class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant/30 text-on-surface-variant hover:border-primary hover:text-primary transition-all">
+                            <span class="material-symbols-outlined">chevron_left</span>
+                        </button>
+                        <button
+                            class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary-container text-on-primary-container font-bold">1</button>
+                        <button
+                            class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant/30 text-on-surface-variant hover:border-primary hover:text-primary transition-all">2</button>
+                        <button
+                            class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant/30 text-on-surface-variant hover:border-primary hover:text-primary transition-all">3</button>
+                        <span class="px-2 text-on-surface-variant">...</span>
+                        <button
+                            class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant/30 text-on-surface-variant hover:border-primary hover:text-primary transition-all">12</button>
+                        <button
+                            class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant/30 text-on-surface-variant hover:border-primary hover:text-primary transition-all">
+                            <span class="material-symbols-outlined">chevron_right</span>
+                        </button>
+                    </nav>
+                </div>
+            </section>
+        </div>
+    </main>
+    <!-- BottomNavBar (Mobile Only) -->
+    <nav
+        class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-2 bg-[#121416]/90 backdrop-blur-2xl rounded-t-xl z-50 border-t border-[#414754]/15 shadow-none">
+        <a class="flex flex-col items-center justify-center text-[#e2e2e5]/50 px-5 py-2 hover:text-[#adc7ff] transition-transform active:scale-90"
+            href="#">
+            <span class="material-symbols-outlined">home</span>
+            <span class="text-[11px] font-medium font-['Manrope']">Home</span>
+        </a>
+        <a class="flex flex-col items-center justify-center bg-[#4a8eff]/10 text-[#adc7ff] rounded-2xl px-5 py-2 transition-transform active:scale-90"
+            href="#">
+            <span class="material-symbols-outlined">grid_view</span>
+            <span class="text-[11px] font-medium font-['Manrope']">Catalog</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-[#e2e2e5]/50 px-5 py-2 hover:text-[#adc7ff] transition-transform active:scale-90"
+            href="#">
+            <span class="material-symbols-outlined">shopping_bag</span>
+            <span class="text-[11px] font-medium font-['Manrope']">Cart</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-[#e2e2e5]/50 px-5 py-2 hover:text-[#adc7ff] transition-transform active:scale-90"
+            href="#">
+            <span class="material-symbols-outlined">person</span>
+            <span class="text-[11px] font-medium font-['Manrope']">Account</span>
+        </a>
+    </nav>
+</body>
+
+</html>
